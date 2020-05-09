@@ -1,4 +1,5 @@
 import allure
+import pytest
 
 
 class Calc:
@@ -78,3 +79,7 @@ class TestCalcDiv:
     def test_div_7(self):
         result = self.calc.div(-3, 3)
         assert -1 == result
+
+
+if __name__ == '__main__':
+    pytest.main()
