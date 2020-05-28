@@ -6,11 +6,6 @@
 import pytest
 from app.page.base_page import BasePage
 from app.page.app import App
-import sys
-import os
-
-
-sys.path.append(os.getcwd())
 
 
 def get_data_info(key):

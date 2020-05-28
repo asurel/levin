@@ -9,10 +9,10 @@ from appium.webdriver.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-import sys
 import os
 
-sys.path.append(os.getcwd())
+
+current_path = os.getcwd()
 
 
 class BasePage:
@@ -81,8 +81,9 @@ class BasePage:
     @staticmethod
     def get_data_with_yml(filename):
         # 从yml文件获取所有测试数据
-        with open("../../data/" + filename + ".yml", "r", encoding="utf-8")as f:
+        with open(current_path + "/data/" + filename + ".yml", "r", encoding="utf-8")as f:
             return yaml.safe_load(f)
+
 
 
 

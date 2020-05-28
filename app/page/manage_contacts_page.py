@@ -13,7 +13,6 @@ class ManageContactsPage(BasePage):
     def to_edit_member(self, name):
         # 进入编辑成员页面
         edit_name_ele = f'//*[@text="{name}"]/../../../..//*[@resource-id="com.tencent.wework:id/fdh"]'
-        print(edit_name_ele)
         self.find(By.XPATH, edit_name_ele).click()
         return EditMemberPage(self._driver)
 
