@@ -13,10 +13,12 @@ from app.page.member_invite_page import MemberInvite
 class AddressPage(BasePage):
     def to_add_member(self):
         # 添加成员
-        self.find((By.XPATH, "//*[@text='添加成员']")).click()
+        # self.find((By.XPATH, "//*[@text='添加成员']")).click()
+        self.steps("../page/addresspage.yml")
         return MemberInvite(self._driver)
 
     def to_manage_contacts(self):
         # 跳转至管理联系人页面
-        self.find(By.ID, "gvi").click()
+        # self.find(By.ID, "gvi").click()
+        self.steps("../page/addresspage.yml")
         return ManageContactsPage(self._driver)

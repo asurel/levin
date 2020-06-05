@@ -1,0 +1,31 @@
+add_name:
+  - by: xpath
+    locator: "//*[@text='姓名　']/..//*[@resource-id='com.tencent.wework:id/au7']"
+    action: send
+    value: "${name}"
+
+add_phone:
+  - by: xpath
+    locator: "//*[@text='手机　']/..//*[@resource-id='com.tencent.wework:id/eqx']"
+    action: send
+    value: "${phone}"
+
+add_email:
+  - by: xpath
+    locator: "//*[@text='邮箱　']/..//*[@resource-id='com.tencent.wework:id/au7']"
+    action: send
+    value: "${email}"
+
+set_gender:
+  - by: xpath
+    locator: "//*[@text='性别']/..//*[@resource-id='com.tencent.wework:id/dvl']"
+    action: click
+
+  - by: xpath
+    locator: '//*[@text="${gender}"]'
+    action: click
+
+click_save:
+  - by: id
+    locator: "com.tencent.wework:id/gvk"
+    action: click

@@ -14,6 +14,7 @@ class App(BasePage):
         # 判断driver，初始化driver
         if self._driver is None:
             desired_caps = {}
+            # com.tencent.wework/com.tencent.wework.launch.WwMainActivity
             desired_caps["platformName"] = "Android"
             desired_caps["platformVersion"] = "6.0.1"
             desired_caps["deviceName"] = "127.0.0.1:7555"

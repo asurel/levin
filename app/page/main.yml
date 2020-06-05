@@ -1,0 +1,4 @@
+to_address_list:
+  - by: xpath
+    locator: "//*[@text='通讯录']"
+    action: click

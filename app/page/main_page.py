@@ -13,5 +13,5 @@ class MainPage(BasePage):
 
     def to_address_list(self):
         # 跳转至联系人页面
-        self.find((By.XPATH, "//*[@text='通讯录']")).click()
+        self.steps("../page/main.yml")
         return AddressPage(self._driver)
