@@ -13,7 +13,7 @@ class MemberInvite(BasePage):
         # 手动添加方法
         from app.page.add_contact_page import AddContact
         # self.find(By.XPATH, "//*[@text='手动输入添加']").click()
-        self.steps("../page/member_invite.yml")
+        # self.steps("../page/member_invite.yml")
         return AddContact(self._driver)
 
     def get_toast(self):

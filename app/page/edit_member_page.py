@@ -12,6 +12,7 @@ class EditMemberPage(BasePage):
     def del_member(self):
         # 删除成员
         from app.page.manage_contacts_page import ManageContactsPage
-        self.find(MobileBy.ANDROID_UIAUTOMATOR, 'new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text("删除成员").instance(0))').click()
-        self.find(MobileBy.ID, "b_a").click()
+        # self.find(MobileBy.ANDROID_UIAUTOMATOR, 'new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text("删除成员").instance(0))').click()
+        # self.find(MobileBy.ID, "b_a").click()
+        self.steps("../page/edit_member.yml")
         return ManageContactsPage(self._driver)

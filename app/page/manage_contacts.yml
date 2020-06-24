@@ -1,0 +1,9 @@
+to_edit_member:
+  - by: xpath
+    locator: '//*[@text="${name}"]/../../../..//*[@resource-id="com.tencent.wework:id/fdh"]'
+    action: click
+
+get_member_name:
+  - by: xpath
+    locator: '//*[@text="${name}"]'
+    action: len<1

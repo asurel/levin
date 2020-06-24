@@ -1,0 +1,8 @@
+del_member:
+  - by: -android uiautomator
+    locator: 'new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text("删除成员").instance(0))'
+    action: click
+
+  - by: id
+    locator: "b_a"
+    action: click

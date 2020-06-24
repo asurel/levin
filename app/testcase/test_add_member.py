@@ -3,10 +3,12 @@
 # @Time:2020/5/2614:26
 # @Author:levin
 # @File:test_add_member.py
+import time
+
+import allure
 import pytest
 import yaml
 
-from app.page.base_page import BasePage
 from app.page.app import App
 
 
@@ -35,6 +37,11 @@ class TestAddMember:
             add_email(email).add_phone(phone).set_gender(gender).click_save()
         assert "成功" in self.invite_page.get_toast()
 
+    @pytest.mark.parametrize("name", yaml.safe_load(open("./del_contact.yml", encoding="utf-8")))
+    def test_del_member(self, name):
+        # 测试删除成员
+        self.edit_page = self.main.to_address_list().to_manage_contacts().to_edit_member(name).del_member()
+        assert self.edit_page.get_member_name(name)
     # @pytest.mark.parametrize(("name", "gender", "phone", "email"), get_data_info("add"))
     # def test_add_member(self, name, gender, phone, email):
     #     # 测试添加成员

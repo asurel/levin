@@ -3,6 +3,8 @@
 # @Time:2020/5/259:05
 # @Author:levin
 # @File:app.py
+import os
+
 from appium import webdriver
 from app.page.base_page import BasePage
 from app.page.main_page import MainPage
@@ -18,6 +20,7 @@ class App(BasePage):
             desired_caps["platformName"] = "Android"
             desired_caps["platformVersion"] = "6.0.1"
             desired_caps["deviceName"] = "127.0.0.1:7555"
+            # desired_caps["udid"] = os.getenv("udid",None)
             desired_caps["appPackage"] = "com.tencent.wework"
             desired_caps["appActivity"] = "com.tencent.wework.launch.WwMainActivity"
             desired_caps["noReset"] = True
@@ -25,9 +28,10 @@ class App(BasePage):
             desired_caps["unicodeKeyBoard"] = True
             desired_caps["resetKeyBoard"] = True
             self._driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_caps)
+            # self._driver = webdriver.Remote("http://192.168.2.148:4723/wd/hub", desired_caps)
         else:
             self._driver.launch_app()
-        self._driver.implicitly_wait(10)
+        self._driver.implicitly_wait(3)
         return self
 
     def stop(self):

@@ -28,6 +28,10 @@ class BasePage:
         # 设置隐式等待
         self._driver.implicitly_wait(time)
 
+    def save_screen(self, img_name):
+        # 完成截图
+        self._driver.save_screenshot(img_name)
+
     @handle_black
     def find(self, locator, value: str = None):
         # 定位元素方法
@@ -95,6 +99,9 @@ class BasePage:
                 if "len>0" == action:
                     elements = self.finds(step["by"], step["locator"])
                     return len(elements) > 0
+                if "len<1" == action:
+                    elements = self.finds(step["by"], step["locator"])
+                    return len(elements) == 0
 
 
 
