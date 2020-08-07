@@ -24,7 +24,7 @@ class TestDemo2:
         # desired_caps["skipDeviceInitialization"] = True
         desired_caps["unicodeKeyBoard"] = True
         desired_caps["resetKeyBoard"] = True
-        self.driver = webdriver.Remote("http://192.168.2.152:4723/wd/hub", desired_caps)
+        self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_caps)
         self.driver.implicitly_wait(10)
 
     def teardown(self):
